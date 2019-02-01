@@ -1,2 +1,32 @@
 header.header
-    
+    .header__container
+        .header__wrapper
+            .header__logo
+                img(src="/images/logo.png")
+            
+            .header__phone
+                i.fa.fa-phone
+                a(href="#") +56 9 5242 8350
+        
+        .header__group
+            nav.header__nav
+                ul.header__menu
+                    each item in site.data.header
+                        li.header__item(data-content=item.data)
+                            a(href=item.url)=item.name
+                            if item.submenu
+                                ul.header__submenu
+                                    each link in item.submenu
+                                        li.header__submenu(data-content=link.data)
+                                            a(href=link.url)=link.name
+            
+            .header__social
+                a
+                    i.fa.fa-envelope-o
+                a
+                    i.fa.fa-instagram
+                    
+        .header__hamburguer
+            span
+            span
+            span

@@ -1,4 +1,157 @@
 extends _layouts/base
 
+include ./_modules/slider/slider
+
 block content
     main.home
+        section.home__hero
+            .home__hero__content.-active(data-content="turistico")
+                .home__hero__image
+                    img(src="https://picsum.photos/1440/900?image=0")
+                .home__hero__wrapper
+                    h1.home__hero__title traslados turísticos
+                    p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .home__hero__group
+                        a.home__hero__link.home__hero__link--plain más información
+                        a.home__hero__link.home__hero__link--green reservar fechas
+            .home__hero__content(data-content="corporativo")
+                .home__hero__image
+                    img(src="https://picsum.photos/1440/900?image=0")
+                .home__hero__wrapper
+                    h1.home__hero__title traslados corporativos
+                    p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .home__hero__group
+                        a.home__hero__link.home__hero__link--plain más información
+                        a.home__hero__link.home__hero__link--green reservar fechas
+            .home__hero__content(data-content="ejecutivo")
+                .home__hero__image
+                    img(src="https://picsum.photos/1440/900?image=0")
+                .home__hero__wrapper
+                    h1.home__hero__title traslados ejecutivos
+                    p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .home__hero__group
+                        a.home__hero__link.home__hero__link--plain más información
+                        a.home__hero__link.home__hero__link--green reservar fechas
+            .home__hero__content(data-content="aeropuerto")
+                .home__hero__image
+                    img(src="https://picsum.photos/1440/900?image=0")
+                .home__hero__wrapper
+                    h1.home__hero__title traslados al aeropuerto
+                    p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .home__hero__group
+                        a.home__hero__link.home__hero__link--plain más información
+                        a.home__hero__link.home__hero__link--green reservar fechas
+            .home__hero__tabs
+                a(href="#" data-target="turistico").home__hero__tab.-active
+                        i.fa.fa-umbrella
+                        h3.home__hero__tab-title traslados turísticos
+                a(href="#" data-target="corporativo").home__hero__tab
+                        i.fa.fa-bus
+                        h3.home__hero__tab-title traslados corporativos
+                a(href="#" data-target="ejecutivo").home__hero__tab
+                        i.fa.fa-car
+                        h3.home__hero__tab-title traslados ejecutivos
+                a(href="#" data-target="aeropuerto").home__hero__tab
+                        i.fa.fa-plane
+                        h3.home__hero__tab-title traslados al aeropuerto
+        
+        section.home__about
+            .home__about__column.home__about__column--right
+                h2.home__about__title sobre nosotros
+                .home__about__group.home__about__group--right
+                    .home__about__wrapper
+                        p.home__about__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        p.home__about__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        p.home__about__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        a(href="#").home__about__link Si quieres saber má sobre nosotros y formar parte de esta historia, sigue leyendo acá
+
+            .home__about__column.home__about__column--left
+                .home__about__group.home__about__group--left
+                    .home__about__logo
+                        img(src="/images/logo.png")
+                    +slider("home__about__slider", "normal")
+                        .home__about__slide
+                            .home__about__image
+                                img(src="https://picsum.photos/1440/900?image=1")
+                        .home__about__slide
+                            .home__about__image
+                                img(src="https://picsum.photos/1440/900?image=2")
+                        .home__about__slide
+                            .home__about__image
+                                img(src="https://picsum.photos/1440/900?image=3")
+                        .home__about__slide
+                            .home__about__image
+                                img(src="https://picsum.photos/1440/900?image=4")
+                    a(href="#").home__about__social
+                        i.fa.fa-instagram
+                        p.home__about__comment síguenos en instagram y enterate de nuestras promociones
+
+        section.home__testimonios
+            +slider("home__testimonios__slider", "alt")
+                .home__testimonios__slide
+                    .home__testimonios__slide-wrapper
+                        .home__testimonios__slide-content
+                            h3.home__testimonios__slide-title Clientes Satisfechos
+                            .home__testimonios__slide-row
+                                .home__testimonios__quoter
+                                    img(src="https://picsum.photos/1440/900?image=1")
+                                .home__testimonios__group
+                                    p.home__testimonios__name 
+                                        |José Pérez 
+                                        strong Gerente de la Empresa
+                                    p.home__testimonios__service
+                                        strong Traslado a: 
+                                        |Viña del Mar
+                            p.home__testimonios__slide-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    .home__testimonios__slide-image
+                        img(src="https://picsum.photos/1440/900?image=10")
+                .home__testimonios__slide
+                    .home__testimonios__slide-wrapper
+                        .home__testimonios__slide-content
+                            h3.home__testimonios__slide-title Clientes Satisfechos
+                            .home__testimonios__slide-row
+                                .home__testimonios__quoter
+                                    img(src="https://picsum.photos/1440/900?image=1")
+                                .home__testimonios__group
+                                    p.home__testimonios__name 
+                                        |Pedro Pérez 
+                                        strong Gerente de la Empresa
+                                    p.home__testimonios__service
+                                        strong Traslado a: 
+                                        |Viña del Mar
+                            p.home__testimonios__slide-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    .home__testimonios__slide-image
+                        img(src="https://picsum.photos/1440/900?image=10")
+
+        section.home__clients
+            h2.home__clients__title confía en nosotros
+            .home__clients__wrapper
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+                .home__clients__logo
+                    img(src="https://picsum.photos/1440/900?image=1")
+            .home__clients__group
+                .home__clients__group-wrapper
+                    .home__clients__group-logo
+                        img(src="https://picsum.photos/1440/900?image=1")
+                    .home__clients__group-logo
+                        img(src="https://picsum.photos/1440/900?image=1")
+                    .home__clients__group-logo
+                        img(src="https://picsum.photos/1440/900?image=1")
+                    

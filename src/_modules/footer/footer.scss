@@ -1,3 +1,199 @@
 .footer {
-    
+    &__row {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(sm) {
+            width: 80%;
+        }
+
+        &--top {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid $midGray;
+
+            @include mq(sm) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        &--bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+
+            @include mq(sm) {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__column {
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        @include mq(sm) {
+            margin-bottom: 5vh;;
+            width: 31%;
+        }
+
+    }
+
+    &__logo {
+        height: 10vh;
+        margin-bottom: 20px;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__map {
+        height: 40vh;
+    }
+
+    &__group {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+
+        i {
+            color: $green;
+            min-width: 40px;
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        line-height: 1;
+        font-weight: 700;
+    }
+
+    &__input {
+        border: none;
+        background: $lightGray;
+        border-bottom: 4px solid $blue;
+        padding: 10px 20px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        &--textarea {
+            height: 100px;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        background: $green;
+        border: none;
+        color: $white;
+        text-transform: uppercase;
+        padding: 15px 0;
+        font-weight: 700;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        color: $blue;
+
+        @include mq(sm) {
+            margin-top: 0;
+        }
+    }
+
+    &__block {
+        margin-bottom: 20px;
+
+        a {
+            color: $green;
+        }
+    }
+
+    &__block-text {
+        font-size: 20px;
+        font-weight: 700;
+        color: $midGray;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__pago {
+        margin-bottom: 20px;
+
+        p {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+
+    &__wrapper {
+        text-align: center;
+        a {
+            font-size: 12px;
+            color: $midGray;
+            text-transform: uppercase;
+
+            @include mq(sm) {
+                font-size: 14px;
+            }
+
+            &:first-child {
+                border-right: 1px solid $midGray;
+                margin-right: 5px;
+                padding-right: 5px;
+            }
+        }
+    }
+
+    &__comment {
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        margin: 0;
+        font-weight: 700;
+
+        @include mq(sm) {
+            width: 100%;
+            display: flex;
+            text-align: left;
+        }
+
+        br {
+            @include mq(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &__uininja {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+
+        @include mq(sm) {
+            margin-top: 0;
+        }
+    }
+
+    &__ui-text {
+        text-transform: uppercase;
+        font-size: 12px;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    &__uininja-logo {
+        margin-left: 20px;
+    }
 }
