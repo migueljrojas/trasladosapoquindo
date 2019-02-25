@@ -9,25 +9,19 @@
         }
 
         &--top {
-            display: flex;
-            flex-direction: column;
             border-bottom: 1px solid $midGray;
 
             @include mq(sm) {
-                flex-direction: row;
+                display: flex;
                 justify-content: space-between;
             }
         }
 
         &--bottom {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             padding: 20px 0;
 
             @include mq(sm) {
-                flex-direction: row;
+                display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
@@ -39,10 +33,9 @@
         margin-bottom: 20px;
 
         @include mq(sm) {
-            margin-bottom: 5vh;;
+            margin-bottom: 40px;
             width: 31%;
         }
-
     }
 
     &__logo {
@@ -56,7 +49,20 @@
     }
 
     &__map {
-        height: 40vh;
+        height: 0;
+        padding-bottom: 95%;
+        overflow: hidden;
+        position: relative;
+
+        iframe {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
     }
 
     &__group {
@@ -78,12 +84,24 @@
     }
 
     &__input {
+        @include trans;
+
         border: none;
         background: $lightGray;
         border-bottom: 4px solid $blue;
         padding: 10px 20px;
         width: 100%;
         margin-bottom: 20px;
+        outline: none;
+
+        &::placeholder {
+            color: $blue;
+        }
+
+        &:focus,
+        &:active {
+            border-bottom: 4px solid $green;
+        }
 
         &--textarea {
             height: 100px;
@@ -179,10 +197,11 @@
         display: flex;
         align-items: center;
         width: 100%;
-        justify-content: flex-end;
+        justify-content: center;
 
         @include mq(sm) {
             margin-top: 0;
+            justify-content: flex-end;
         }
     }
 

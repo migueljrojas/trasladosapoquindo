@@ -1,0 +1,649 @@
+.traslados {
+    &__hero {
+        padding-top: 10vh;
+        height: 80vh;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+
+        &__background {
+            height: 100%;
+            overflow: hidden;
+            width: 100vw;
+
+            img {
+                width: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                height: 100%;
+
+                @include mq(sm) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            padding-top: 10vh;
+            width: 90%;
+
+            @include mq(sm) {
+                width: 80%;
+            }
+        }
+
+        &__title {
+            text-transform: uppercase;
+            color: $white;
+            text-align: center;
+            margin-top: 0;
+            font-weight: 700;
+            font-size: 32px;
+
+            @include mq(sm) {
+                font-size: 80px;
+            }
+        }
+
+        &__button {
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            text-transform: uppercase;
+            color: $white;
+            text-align: center;
+            font-weight: 700;
+            background: $green;
+            padding: 10px 40px;
+            margin-top: 20px;
+
+            @include mq(sm) {
+                font-size: 26px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__reservas {
+        margin-bottom: 40px;
+        position: relative;
+
+        &__type-group {
+            @include trans;
+
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            padding-top: 40px;
+
+            @include mq(sm) {
+                width: 70%;
+            }
+
+            &.-active {
+                opacity: 1;
+                overflow: visible;
+                height: auto;
+            }
+        }
+
+        &__back-arrow {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            padding-left: 20px;
+            color: $blue;
+            font-weight: 900;
+            opacity: 0;
+            overflow: hidden;
+            height: 0;
+            cursor: pointer;
+            z-index: 2;
+
+            i {
+                margin-left: 10px;
+            }
+
+            &.-active {
+                opacity: 1;
+                overflow: visible;
+                height: auto;
+            }
+        }
+
+        &__reserva-type {
+            width: 100%;
+            margin-bottom: 15px;
+            position: relative;
+            cursor: pointer;
+
+            @include mq(sm) {
+                width: 32%;
+            }
+        }
+
+        &__type-image {
+            overflow: hidden;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            background: $black;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                opacity: .6;
+            }
+        }
+
+        &__type-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            margin: 0;
+            width: 80%;
+            color: $white;
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        &__container {
+            @include trans;
+
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+
+            @include mq(sm) {
+                width: 80%;
+            }
+
+            &.-active {
+                opacity: 1;
+                overflow: visible;
+                height: auto;
+            }
+        }
+
+        &__row {
+            margin-bottom: 40px;
+
+            @include mq(sm) {
+                display: flex;
+            }
+
+            &--bottom {
+                @include trans;
+
+                height: 0;
+                overflow: hidden;
+                opacity: 0;
+                pointer-events: none;
+                margin: 0;
+
+                &.-active {
+                    height: auto;
+                    opacity: 1;
+                    pointer-events: all;
+
+                    @include mq(sm) {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            &--top {
+                display: flex;
+            }
+        }
+
+        &__column {
+            @include trans;
+            overflow: hidden;
+
+            @include mq(sm) {
+                width: 50%;
+            }
+
+            &--top {
+                width: 50%;
+            }
+
+            &--bottom-left {
+                margin-bottom: 40px;
+
+                @include mq(sm) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-bottom: 0;
+                }
+            }
+
+            &--reserva {
+                height: 0;
+                overflow: hidden;
+                opacity: 0;
+                pointer-events: none;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include mq(sm) {
+                    width: 40%;
+                }
+
+                &.-active {
+                    height: auto;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+
+                &--small {
+                    width: 100%;
+
+                    @include mq(sm) {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+
+        &__heading {
+            @include trans;
+
+            padding: 15px 10px;
+            background: $lightestGray;
+            position: relative;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include mq(sm) {
+                padding: 20px 0;
+            }
+
+            &.-active {
+                background: $white;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 5px;
+                    width: 100%;
+                    background: $green;
+                }
+            }
+        }
+
+        &__title {
+            margin: 0;
+            text-align: center;
+            color: $blue;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 14px;
+
+            @include mq(sm) {
+                font-size: 20px;
+            }
+        }
+
+        &__wrapper {
+            overflow: hidden;
+            height: 100%;
+
+            &--flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &--image {
+                height: 100vw;
+                position: relative;
+                padding-bottom: 100%;
+                height: 0;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+
+        &__text {
+            color: $midGray;
+            line-height: 1.7;
+            margin: 0;
+            margin-bottom: 20px;
+
+            @include mq(sm) {
+                font-size: 18px;
+                padding-right: 40px;
+            }
+        }
+
+        &__subtitle {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        &__button {
+            a {
+                text-transform: uppercase;
+                color: $white;
+                text-align: center;
+                font-weight: 700;
+                background: $green;
+                padding: 10px 40px;
+                border: none;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include mq(sm) {
+                    font-size: 20px;
+                    text-decoration: none;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__steps {
+            display: flex;
+            justify-content: space-between;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            height: auto;
+            position: relative;
+            width: 50%;
+
+            @include mq(sm) {
+                width: 20%;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: $blue;
+                height: 2px;
+                width: 100%;
+            }
+
+        }
+
+        &__step {
+            @include trans;
+
+            display: block;
+            width: 15px;
+            height: 15px;
+            border: 1px solid $blue;
+            border-radius: 50%;
+            background: $white;
+            z-index: 2;
+
+            &.-active {
+                background: $blue;
+            }
+        }
+
+        &__form {
+            width: 100%;
+        }
+
+        &__reserva-title {
+            text-align: center;
+            color: $blue;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 900;
+        }
+
+        &__calendar {
+            margin-bottom: 20px;
+        }
+
+        &__picker {
+            padding-top: 20px;
+            border-top: 1px solid $lightGray;
+            border-bottom: 1px solid $lightGray;
+            margin-bottom: 40px;
+        }
+
+        &__picker-group {
+            margin-bottom: 20px;
+        }
+
+        &__continue-button {
+            background: $blue;
+            color: $white;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+            padding: 10px 0;
+            width: 48%;
+            float: right;
+        }
+
+        &__back-button {
+            background: $lightestGray;
+            color: $blue;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+            padding: 10px 0;
+            width: 48%;
+            float: left;
+        }
+
+        &__select {
+            width: 100%;
+            outline: none;
+            border: none;
+            background: $lightestGray;
+            color: $blue;
+            padding: 10px;
+            margin-bottom: 40px;
+
+            &--modifier  {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        &__input {
+            @include trans;
+
+            width: 100%;
+            outline: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 4px solid $blue;
+            background: $lightestGray;
+            color: $blue;
+            padding: 10px;
+            margin-bottom: 20px;
+            position: relative;
+
+            &::placeholder {
+                color: $blue;
+            }
+
+            &:active,
+            &:focus {
+                border-bottom: 4px solid $green;
+            }
+
+            &--half {
+                @include mq(sm) {
+                    width: 48.5%;
+                }
+            }
+
+            &--checkbox,
+            &--radio {
+                position: absolute;
+                left: -9999px;
+            }
+        }
+
+        [type="checkbox"]:checked + label,
+        [type="radio"]:checked + label {
+            &:before {
+                @include trans;
+                z-index: 2;
+            }
+        }
+
+        &__label {
+            color: $blue;
+            font-size: 12px;
+            padding-left: 30px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                // display: block;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: $lightestGray;
+                height: 20px;
+                width: 20px;
+            }
+
+            &:before {
+                content: '✔';
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $blue;
+                height: 20px;
+                width: 20px;
+            }
+
+            &--circular {
+                font-size: 16px;
+                margin-top: 0;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    // display: block;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: $lightestGray;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    top: 50%;
+                    transform: translateY(-50%) scale3d(.6,.6,.6);
+                    background: $blue;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &__reserva-uppertitle {
+            color: $green;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        &__reserva-text {
+            color: $blue;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        &__reserva-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__reserva-group {
+            width: 100%;
+            margin-bottom: 15px;
+
+            &--half {
+                @include mq(sm) {
+                    width: 48.5%;
+                }
+            }
+        }
+
+        &__group-title {
+            color: $blue;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        &__group-text {
+            color: $blue;
+        }
+    }
+}

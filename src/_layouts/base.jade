@@ -23,7 +23,8 @@ body
     <![endif]-->
     
     include ../_modules/logo/logo.jade
-    
+    include ../_modules/reviews/reviews
+        
     block header
         include ../_modules/header/header.jade
 
@@ -31,11 +32,12 @@ body
 
     block footer
         include ../_modules/footer/footer.jade
+        
+    
+    script(src= baseUrl + 'scripts/main.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js")
+    script new WOW().init();
 
     block scripts
-        script(src= baseUrl + 'scripts/main.js')
-        
-        script(src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js")
-        script new WOW().init();
-
+    
 </html>

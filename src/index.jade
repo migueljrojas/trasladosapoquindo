@@ -1,6 +1,7 @@
 extends _layouts/base
 
 include ./_modules/slider/slider
+include ./_modules/clients/clients
 
 block content
     main.home
@@ -16,7 +17,7 @@ block content
                         a.home__hero__link.home__hero__link--green reservar fechas
             .home__hero__content(data-content="corporativo")
                 .home__hero__image
-                    img(src="https://picsum.photos/1440/900?image=0")
+                    img(src="https://picsum.photos/1440/900?image=1")
                 .home__hero__wrapper
                     h1.home__hero__title traslados corporativos
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -25,7 +26,7 @@ block content
                         a.home__hero__link.home__hero__link--green reservar fechas
             .home__hero__content(data-content="ejecutivo")
                 .home__hero__image
-                    img(src="https://picsum.photos/1440/900?image=0")
+                    img(src="https://picsum.photos/1440/900?image=2")
                 .home__hero__wrapper
                     h1.home__hero__title traslados ejecutivos
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -34,7 +35,7 @@ block content
                         a.home__hero__link.home__hero__link--green reservar fechas
             .home__hero__content(data-content="aeropuerto")
                 .home__hero__image
-                    img(src="https://picsum.photos/1440/900?image=0")
+                    img(src="https://picsum.photos/1440/900?image=3")
                 .home__hero__wrapper
                     h1.home__hero__title traslados al aeropuerto
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -42,16 +43,16 @@ block content
                         a.home__hero__link.home__hero__link--plain más información
                         a.home__hero__link.home__hero__link--green reservar fechas
             .home__hero__tabs
-                a(href="#" data-target="turistico").home__hero__tab.-active
+                a.home__hero__tab.-active(href="#" data-target="turistico")
                         i.fa.fa-umbrella
                         h3.home__hero__tab-title traslados turísticos
-                a(href="#" data-target="corporativo").home__hero__tab
+                a.home__hero__tab(href="#" data-target="corporativo")
                         i.fa.fa-bus
                         h3.home__hero__tab-title traslados corporativos
-                a(href="#" data-target="ejecutivo").home__hero__tab
+                a.home__hero__tab(href="#" data-target="ejecutivo")
                         i.fa.fa-car
                         h3.home__hero__tab-title traslados ejecutivos
-                a(href="#" data-target="aeropuerto").home__hero__tab
+                a.home__hero__tab(href="#" data-target="aeropuerto")
                         i.fa.fa-plane
                         h3.home__hero__tab-title traslados al aeropuerto
         
@@ -123,35 +124,4 @@ block content
                     .home__testimonios__slide-image
                         img(src="https://picsum.photos/1440/900?image=10")
 
-        section.home__clients
-            h2.home__clients__title confía en nosotros
-            .home__clients__wrapper
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-                .home__clients__logo
-                    img(src="https://picsum.photos/1440/900?image=1")
-            .home__clients__group
-                .home__clients__group-wrapper
-                    .home__clients__group-logo
-                        img(src="https://picsum.photos/1440/900?image=1")
-                    .home__clients__group-logo
-                        img(src="https://picsum.photos/1440/900?image=1")
-                    .home__clients__group-logo
-                        img(src="https://picsum.photos/1440/900?image=1")
-                    
+        +clients

@@ -1,0 +1,119 @@
+.reviews {
+    background: $lightGray;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    &__container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+
+        @include mq(sm) {
+            padding: 20px;
+            width: 50%;
+        }
+    }
+
+    &__title {
+        color: $blue;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+
+    &__slider {
+        .slick-dots {
+            bottom: -10%;
+
+            @include mq(sm) {
+                bottom: -45px;
+            }
+
+            li {
+                button {
+                    &:before {
+                        color: $blue;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        height: 25vh;
+        margin-bottom: 40px;
+
+        @include mq(sm) {
+            margin-bottom: 40px;
+            width: 80%;
+            height: auto;
+            flex-direction: row;
+        }
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 50%;
+        width: 30%;
+        height: 0;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 30%;
+        position: relative;
+
+        @include mq(sm) {
+            width: 20%;
+            margin-right: 5%;
+            margin-bottom: 0;
+            margin-left: 0;
+            padding-bottom: 20%;
+        }
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(sm) {
+            width: 75%;
+        }
+    }
+
+    &__quoter,
+    &__comment {
+        text-align: center;
+        color: $blue;
+        font-size: 18px;
+
+        @include mq(sm) {
+            text-align: left;
+        }
+    }
+
+    &__quote {
+        text-align: center;
+        color: $darkGray;
+    }
+}

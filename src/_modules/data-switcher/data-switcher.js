@@ -19,7 +19,7 @@ var DataSwitcher = function() {
             targets.removeClass('-active');
             contents.removeClass('-active');
 
-            $this.addClass('-active');
+            $('[data-target="'+ targettedContent +'"]').addClass('-active');
             contents.filter(function() {
                 return $(this).data('content') === targettedContent;
             }).addClass('-active');

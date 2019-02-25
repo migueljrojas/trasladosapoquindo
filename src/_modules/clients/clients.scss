@@ -1,0 +1,112 @@
+.clients {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include mq(sm) {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: $blue;
+        text-align: center;
+        margin: 0;
+
+        @include mq(sm) {
+            font-weight: 700;
+            font-size: 40px;
+        }
+    }
+
+    &__wrapper {
+        overflow: hidden;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        @include mq(sm)  {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+    }
+
+    &__container {
+        overflow: auto;
+        white-space: nowrap;
+        padding: 0 5%;
+
+        @include mq(sm) {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        width: 120px;
+        display: inline-block;
+
+        @include mq(sm) {
+            width: 18%;
+            margin-bottom: 2vw;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+
+            @include mq(sm) {
+                margin-right: 0;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        background: $lightGray;
+        padding: 40px;
+
+        @include mq(sm) {
+            flex-direction: row;
+        }
+    }
+
+    &__group-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(sm) {
+            justify-content: space-between;
+            flex-direction: row;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__group-logo {
+        overflow: hidden;
+        height: 10vh;
+        margin-bottom: 20px;
+
+        @include mq(sm) {
+            margin-bottom: 0;
+            width: 30%;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        img  {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

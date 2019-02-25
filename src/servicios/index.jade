@@ -1,0 +1,61 @@
+extends ../_layouts/base
+
+include ../_modules/reviews/reviews
+include ../_modules/slider/slider
+include ../_modules/clients/clients
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.servicios
+        section.servicios__hero
+            .servicios__background
+                img(src="https://picsum.photos/1440/900?image=0")
+            .servicios__content
+                h1.servicios__title conoce nuestros servicios
+        
+        section.servicios__descripcion
+            .servicios__descripcion__servicio
+                .servicios__descripcion__background
+                    img(src="https://picsum.photos/1440/900?image=5")
+                .servicios__descripcion__group
+                    .servicios__descripcion__title Traslados turísticos
+                    .servicios__descripcion__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .servicios__descripcion__wrapper
+                        a.servicios__descripcion__link.servicios__descripcion__link--plain(href="#") más información
+                        a.servicios__descripcion__link.servicios__descripcion__link--green(href="#") reserva online
+
+            .servicios__descripcion__servicio.servicios__descripcion__servicio--right
+                .servicios__descripcion__background
+                    img(src="https://picsum.photos/1440/900?image=6")
+                .servicios__descripcion__group
+                    .servicios__descripcion__title.servicios__descripcion__title--right Traslados Corporativos
+                    .servicios__descripcion__text.servicios__descripcion__text--right Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .servicios__descripcion__wrapper
+                        a.servicios__descripcion__link.servicios__descripcion__link--plain(href="#") más información
+                        a.servicios__descripcion__link.servicios__descripcion__link--green(href="#") reserva online
+
+            .servicios__descripcion__servicio.servicios__descripcion__servicio--left
+                .servicios__descripcion__background
+                    img(src="https://picsum.photos/1440/900?image=7")
+                .servicios__descripcion__group
+                    .servicios__descripcion__title Traslados ejecutivos
+                    .servicios__descripcion__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .servicios__descripcion__wrapper
+                        a.servicios__descripcion__link.servicios__descripcion__link--plain(href="#") más información
+                        a.servicios__descripcion__link.servicios__descripcion__link--green(href="#") reserva online
+
+            .servicios__descripcion__servicio.servicios__descripcion__servicio--right
+                .servicios__descripcion__background
+                    img(src="https://picsum.photos/1440/900?image=8")
+                .servicios__descripcion__group
+                    .servicios__descripcion__title.servicios__descripcion__title--right Traslados al aeropuerto
+                    .servicios__descripcion__text.servicios__descripcion__text--right Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .servicios__descripcion__wrapper
+                        a.servicios__descripcion__link.servicios__descripcion__link--plain(href="#") más información
+                        a.servicios__descripcion__link.servicios__descripcion__link--green(href="#") reserva online
+        
+        +reviews
+        +clients

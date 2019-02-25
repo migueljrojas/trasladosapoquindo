@@ -1,0 +1,43 @@
+include ../slider/slider
+
+mixin reviews(spec)
+    section.reviews
+        .reviews__container
+            h2.reviews__title que dicen nuestros clientes
+            +slider("reviews__slider", "alt")
+                .reviews__slide
+                    .reviews__wrapper
+                        .reviews__image
+                            img(src="https://picsum.photos/1440/900?image=0")
+                        .reviews__group
+                            p.reviews__quoter
+                                |José Pérez 
+                                strong Gerente de La Empresa
+                            p.reviews__comment
+                                strong Traslado a: 
+                                span Viña del Mar
+                    p.reviews__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                .reviews__slide
+                    .reviews__wrapper
+                        .reviews__image
+                            img(src="https://picsum.photos/1400/1400?image=0")
+                        .reviews__group
+                            p.reviews__quoter
+                                |José Pérez 
+                                strong Presidente de La Empresa
+                            p.reviews__comment
+                                strong Traslado a: 
+                                span Viña del Mar
+                    p.reviews__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                .reviews__slide
+                    .reviews__wrapper
+                        .reviews__image
+                            img(src="https://picsum.photos/1440/900?image=0")
+                        .reviews__group
+                            p.reviews__quoter
+                                |José Pérez 
+                                strong CFO de La Empresa
+                            p.reviews__comment
+                                strong Traslado a: 
+                                span Viña del Mar
+                    p.reviews__quote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

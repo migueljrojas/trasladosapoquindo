@@ -1,0 +1,132 @@
+extends ../_layouts/base
+
+include ../_modules/reviews/reviews
+include ../_modules/slider/slider
+include ../_modules/clients/clients
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.traslados.traslados--turisticos
+        section.traslados__hero
+            .traslados__hero__background
+                img(src="https://picsum.photos/1440/900?image=0")
+            .traslados__hero__content
+                h1.traslados__hero__title Traslados turisticos
+        
+        section.traslados__reservas#reservas
+            .traslados__reservas__back-arrow Volver
+                i.fa.fa-arrow-left
+            .traslados__reservas__type-group.-active
+                a.traslados__reservas__reserva-type(href="#reservas")
+                    .traslados__reservas__type-image
+                        img(src="https://picsum.photos/1340/900?image=5")
+                    h3.traslados__reservas__type-title Clases de buceo
+                a.traslados__reservas__reserva-type(href="#reservas")
+                    .traslados__reservas__type-image
+                        img(src="https://picsum.photos/1340/900?image=5")
+                    h3.traslados__reservas__type-title Cajón del Maipo
+                a.traslados__reservas__reserva-type(href="#reservas")
+                    .traslados__reservas__type-image
+                        img(src="https://picsum.photos/1340/900?image=5")
+                    h3.traslados__reservas__type-title isla negra
+                a.traslados__reservas__reserva-type(href="#reservas")
+                    .traslados__reservas__type-image
+                        img(src="https://picsum.photos/1340/900?image=5")
+                    h3.traslados__reservas__type-title algarrobo
+                a.traslados__reservas__reserva-type(href="#reservas")
+                    .traslados__reservas__type-image
+                        img(src="https://picsum.photos/1340/900?image=5")
+                    h3.traslados__reservas__type-title Casino monticcelo
+                a.traslados__reservas__reserva-type(href="#reservas")
+                    .traslados__reservas__type-image
+                        img(src="https://picsum.photos/1340/900?image=5")
+                    h3.traslados__reservas__type-title city tour
+                    
+            .traslados__reservas__container
+                .traslados__reservas__row.traslados__reservas__row--top#tabs
+                    .traslados__reservas__column.traslados__reservas__column--top
+                        .traslados__reservas__heading.-active(data-target="tab-informacion")
+                            h2.traslados__reservas__title información sobre traslados
+                    .traslados__reservas__column.traslados__reservas__column--top
+                        .traslados__reservas__heading(data-target="tab-reservas")
+                            h2.traslados__reservas__title reservas
+                .traslados__reservas__row.traslados__reservas__row--bottom.-active(data-content="tab-informacion")
+                    .traslados__reservas__column.traslados__reservas__column--bottom-left
+                        .traslados__reservas__wrapper
+                            p.traslados__reservas__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                            h3.traslados__reservas__subtitle Que incluye
+                            p.traslados__reservas__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            .traslados__reservas__button
+                                a(href="#tabs" data-target="tab-reservas") haz tu reserva
+                    .traslados__reservas__column
+                        .traslados__reservas__wrapper.traslados__reservas__wrapper--image
+                            img(src="https://picsum.photos/1940/1400?image=1")
+
+                .traslados__reservas__row.traslados__reservas__row--bottom(data-content="tab-reservas")
+                    ul.traslados__reservas__steps
+                        li.traslados__reservas__step.js-stepIndex.-active(data-step="step1")
+                        li.traslados__reservas__step.js-stepIndex
+                        li.traslados__reservas__step.js-stepIndex
+                    form.traslados__reservas__form
+                        .traslados__reservas__column.traslados__reservas__column--reserva.traslados__reservas__column--reserva--small.js-step.-active(data-step="step1")
+                            h3.traslados__reservas__reserva-title Qué día quieres viajar?
+                            .traslados__reservas__picker
+                                .traslados__reservas__picker-group
+                                    input.traslados__reservas__input.traslados__reservas__input--radio(type="radio" id="radio1" name="radio")
+                                    label.traslados__reservas__label.traslados__reservas__label--circular(for="radio1") 5 de Febrero a las 7:30 am
+                                .traslados__reservas__picker-group
+                                    input.traslados__reservas__input.traslados__reservas__input--radio(type="radio" id="radio2" name="radio")
+                                    label.traslados__reservas__label.traslados__reservas__label--circular(for="radio2") 12 de Febrero a las 7:30 am
+                                .traslados__reservas__picker-group
+                                    input.traslados__reservas__input.traslados__reservas__input--radio(type="radio" id="radio3" name="radio")
+                                    label.traslados__reservas__label.traslados__reservas__label--circular(for="radio3") 19 de Febrero a las 7:30 am
+                                .traslados__reservas__picker-group
+                                    input.traslados__reservas__input.traslados__reservas__input--radio(type="radio" id="radio4" name="radio")
+                                    label.traslados__reservas__label.traslados__reservas__label--circular(for="radio4") 26 de Febrero a las 7:30 am
+                                .traslados__reservas__picker-group
+                                    input.traslados__reservas__input.traslados__reservas__input--radio(type="radio" id="radio5" name="radio")
+                                    label.traslados__reservas__label.traslados__reservas__label--circular(for="radio5") 5 de Marzo a las 7:30 am
+                            button.traslados__reservas__continue-button.js-nextStep continuar
+
+                        .traslados__reservas__column.traslados__reservas__column--reserva.js-step
+                            h3.traslados__reservas__reserva-title Completa tus datos para la reserva del Tour al Cajón del Maipo el 5 de febrero a las 7:30 am 
+                            .traslados__reservas__group
+                                input.traslados__reservas__input(type="text" placeholder="Nombre y Apellido")
+                                input.traslados__reservas__input(type="email" placeholder="Email")
+                                input.traslados__reservas__input.traslados__reservas__input--half(type="number" placeholder="Teléfono")
+                                input.traslados__reservas__input.traslados__reservas__input--half(type="number" placeholder="RUT / Pasaporte / DNI")
+                                select.traslados__reservas__select.traslados__reservas__select--modifier
+                                    option(hidden selected disabled) Cuantas personas viajan?
+                                    option 1
+                                    option 2
+                                    option 3
+                                    option 4
+                                    option 5
+                                    option 6
+                                input.traslados__reservas__input.traslados__reservas__input--checkbox(type="checkbox" id="checkbox" checked)
+                                label.traslados__reservas__label(for="checkbox") Acepto los términos y condiciones
+                            button.traslados__reservas__back-button.js-prevStep volver
+                            button.traslados__reservas__continue-button.js-nextStep reservar
+                        .traslados__reservas__column.traslados__reservas__column--reserva.js-step
+                            h2.traslados__reservas__reserva-uppertitle Reserva confirmada
+                            h3.traslados__reservas__reserva-title Gracias por elegir Traslados Apoquindo, este es el resumen de tu reserva. Revisa tu email para tener más detalles
+                            p.traslados__reservas__reserva-text Tour al Cajón del Maipo el día 8 de Febrero a las 7:30 am para 5 personas, a nombre de:
+                            .traslados__reservas__reserva-wrapper
+                                .traslados__reservas__reserva-group
+                                    .traslados__reservas__group-title Nombre y Apellido
+                                    .traslados__reservas__group-text Juan Pérez
+                                .traslados__reservas__reserva-group
+                                    .traslados__reservas__group-title Email
+                                    .traslados__reservas__group-text juan.perez@mail.com
+                                .traslados__reservas__reserva-group.traslados__reservas__reserva-group--half
+                                    .traslados__reservas__group-title Teléfono
+                                    .traslados__reservas__group-text +56 555 5555
+                                .traslados__reservas__reserva-group.traslados__reservas__reserva-group--half
+                                    .traslados__reservas__group-title RUT / Pasaporte / DNI
+                                    .traslados__reservas__group-text 999999999
+
+        +reviews
+        +clients
