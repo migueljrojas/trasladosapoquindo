@@ -6,33 +6,44 @@ var Reservas = function() {
     var nextStep = $('.js-nextStep');
     var prevStep = $('.js-prevStep');
     var stepIndexes = $('.js-stepIndex');
-    var informationTab = $('[data-target="tab-informacion"]');
-    var informationTabContent = $('[data-content="tab-informacion"]');
-    var firstStep = $('[data-step="step1"]')
+    var reservaTabContent = $('[data-content="tab-reservas"]');
+    var reservaTabTarget = $('[data-target="tab-reservas"]');
     var reservaType = $('.traslados__reservas__reserva-type');
     var reservasContainer = $('.traslados__reservas__container');
     var backArrow = $('.traslados__reservas__back-arrow');
     var typeContainer = $('.traslados__reservas__type-group');
 
-    informationTab.on('click', function() {
-        dataReset();
-
-        reservasContainer.addClass('-active');
-        backArrow.addClass('-active');
-        informationTab.addClass('-active');
-        informationTabContent.addClass('-active');
-        firstStep.addClass('-active');
-    });
-
     reservaType.on('click', function() {
         dataReset();
+        var informationData = $(this).data('target');
+        var informationTab = $('[data-target=' + informationData + ']');
+        var informationTabContent = $('[data-content=' + informationData + ']');
+        var reservaIndex = reservaType.index(this);
+        var firstStep = $(reservasContainer[reservaIndex]).find('.js-step');
+        var stepIndex = $(reservasContainer[reservaIndex]).find('.js-stepIndex');
 
-        typeContainer.removeClass('-active');
-        reservasContainer.addClass('-active');
         backArrow.addClass('-active');
+        typeContainer.removeClass('-active');
+        $(reservasContainer[reservaIndex]).addClass('-active');
         informationTab.addClass('-active');
         informationTabContent.addClass('-active');
-        firstStep.addClass('-active');
+        reservaTabContent.removeClass('-active');
+        reservaTabTarget.removeClass('-active');
+        $(firstStep[0]).addClass('-active');
+        $(stepIndex[0]).addClass('-active');
+
+        informationTab.on('click', function() {
+            dataReset();
+
+            informationTab.addClass('-active');
+            informationTabContent.addClass('-active');
+            $(reservasContainer[reservaIndex]).addClass('-active');
+            backArrow.addClass('-active');
+            steps.removeClass('-active');
+            stepIndex.removeClass('-active');
+            $(firstStep[0]).addClass('-active');
+            $(stepIndex[0]).addClass('-active');
+        });
     });
 
     backArrow.on('click', function() {
@@ -52,12 +63,16 @@ var Reservas = function() {
 
     function getCurrentStepIndex() {
         var stepsArray = $.makeArray(steps);
+
         return stepsArray.findIndex(isActive);
     }
+
 
     nextStep.on('click', function(e) {
         e.preventDefault();
         var currentStepIndex = getCurrentStepIndex();
+
+        console.log(currentStepIndex);
         setActiveStep(currentStepIndex, 'next');
     });
 

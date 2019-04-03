@@ -138,7 +138,7 @@
             &:after {
                 content: '';
             }
-            
+
             &:hover {
                 h3 {
                     font-size: 30px;
@@ -351,6 +351,15 @@
                     height: auto;
                 }
             }
+        }
+
+        &__wrapper-title {
+            text-align: left;
+            font-size: 28px;
+            text-transform: uppercase;
+            color: $blue;
+            margin-top: 0;
+            font-weight: 900;
         }
 
         &__text {
