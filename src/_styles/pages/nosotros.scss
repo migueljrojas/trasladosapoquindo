@@ -11,6 +11,7 @@
         height: 100%;
         overflow: hidden;
         width: 100vw;
+        background: $black;
 
         img {
             width: auto;
@@ -19,6 +20,7 @@
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
             height: 100%;
+            opacity: .7;
 
             @include mq(sm) {
                 width: 100%;

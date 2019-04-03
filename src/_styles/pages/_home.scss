@@ -23,6 +23,7 @@
             overflow: hidden;
             width: 100vw;
             position: relative;
+            background: $black;
 
             img {
                 width: auto;
@@ -31,6 +32,7 @@
                 left: 50%;
                 transform: translate3d(-50%, -50%, 0);
                 height: 100%;
+                opacity: .7;
 
                 @include mq(sm) {
                     width: 100%;
@@ -334,8 +336,8 @@
                 top: 50%;
                 left: 50%;
                 transform: translate3d(-50%,  -50%, 0);
-                width: auto;
-                height: 100%;
+                width: 100%;
+                height: auto;
             }
         }
 
@@ -374,6 +376,7 @@
     }
 
     &__testimonios {
+        color: $white;
         @include mq(sm) {
             margin-bottom: 40px;
         }
@@ -401,6 +404,7 @@
                 }
             }
         }
+
         &__slide {
             @include mq(sm) {
                 display: flex !important;
@@ -498,6 +502,12 @@
             @include mq(sm) {
                 display: block;
                 width: 50%;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                min-height: 100%;
             }
         }
     }

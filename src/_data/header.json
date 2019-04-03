@@ -6,22 +6,22 @@
         "submenu": [
             {
                 "name":"Traslados Turisticos",
-                "url":"#",
+                "url":"/traslados-turisticos",
                 "data":"submenu-link"
             },
             {
                 "name":"Traslados Corporativos",
-                "url":"#",
+                "url":"/traslados",
                 "data":"submenu-link"
             },
             {
                 "name":"Traslados Ejecutivos",
-                "url":"#",
+                "url":"/traslados",
                 "data":"submenu-link"
             },
             {
                 "name":"Traslados al Aeropuerto",
-                "url":"#",
+                "url":"/traslados",
                 "data":"submenu-link"
             }
         ]
@@ -32,6 +32,6 @@
     },
     {
         "name":"contactanos",
-        "url":"/contacto"
+        "url":"#contacto"
     }
 ]
