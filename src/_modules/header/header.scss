@@ -98,11 +98,12 @@
         }
 
         & > li{
-            border-bottom: 1px dotted rgba(255,255,255,.5);
+            border-bottom: 1px dotted rgba(0,0,0,.5);
             position: relative;
             transition: all $duration $easing;
 
             @include mq(md) {
+                height: 100%;
                 border:none;
             }
 
@@ -131,7 +132,7 @@
             height:40px;
             line-height: 40px;
             display: block;
-            text-align: center;
+            text-align: left;
             color: $black;
             text-transform: uppercase;
             font-size: 14px;
@@ -147,19 +148,17 @@
 
             & + #{$h}__submenu {
                 border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0,0,0,.15);
-                background: $white;
                 position: absolute;
-                top:50px;
+                top: 50px;
                 min-width: 280px;
-                left:50%;
+                left: 50%;
                 opacity: 0;
                 pointer-events: none;
                 transform: translate3d(-50%, -200%, 0);
                 transition: transform .6s $easing, opacity .4s $easing;
 
                 li:not(:last-child){
-                    border-bottom: 1px solid $lightestGray;
+                    border-bottom: 1px solid $blue;
                 }
 
                 @include mq(xs) {
@@ -173,17 +172,24 @@
                     left:0;
                 }
 
-                &:before{
-                    position: absolute;
-                    content: '';
-                    display: block;
-                    left:50%;
-                    transform: translateX(-50%);
-                    border-left:10px solid transparent;
-                    border-right:10px solid transparent;
-                    border-bottom:10px solid $white;
-                    top:-10px;
+                @include mq(md) {
+                    background: $lightGray;
+                    border: 1px solid $lightGray;
+                    top: 40px;
+                    
+                    &:before{
+                        position: absolute;
+                        content: '';
+                        display: block;
+                        left:50%;
+                        transform: translateX(-50%);
+                        border-left:10px solid transparent;
+                        border-right:10px solid transparent;
+                        border-bottom:10px solid $lightGray;
+                        top:-10px;
+                    }
                 }
+
 
                 a{
                     display: block;

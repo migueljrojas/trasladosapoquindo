@@ -1,7 +1,7 @@
 [
     {
         "name":"Servicios",
-        "url":"#",
+        "url":"/servicios",
         "data":"submenu",
         "submenu": [
             {
@@ -11,17 +11,17 @@
             },
             {
                 "name":"Traslados Corporativos",
-                "url":"/traslados",
+                "url":"/traslados/corporativos",
                 "data":"submenu-link"
             },
             {
                 "name":"Traslados Ejecutivos",
-                "url":"/traslados",
+                "url":"/traslados/ejecutivos",
                 "data":"submenu-link"
             },
             {
                 "name":"Traslados al Aeropuerto",
-                "url":"/traslados",
+                "url":"/traslados/al-aeropuerto",
                 "data":"submenu-link"
             }
         ]

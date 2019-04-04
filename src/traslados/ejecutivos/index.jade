@@ -1,0 +1,97 @@
+extends ../../_layouts/base
+
+include ../../_modules/reviews/reviews
+include ../../_modules/slider/slider
+include ../../_modules/clients/clients
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../../'
+
+block content
+    main.traslados
+        section.traslados__hero
+            .traslados__hero__background
+                img(src="/images/home/hero-3.jpg")
+            .traslados__hero__content
+                h1.traslados__hero__title Traslados ejecutivos
+                a.traslados__hero__button(href="#reservas" data-target="tab-reservas") Reservar fecha
+    
+        section.traslados__reservas#reservas
+            .traslados__reservas__container.-active
+                .traslados__reservas__row.traslados__reservas__row--top#tabs
+                    .traslados__reservas__column.traslados__reservas__column--top
+                        .traslados__reservas__heading.-active(data-target="tab-informacion")
+                            h2.traslados__reservas__title información sobre traslados
+                    .traslados__reservas__column.traslados__reservas__column--top
+                        .traslados__reservas__heading(data-target="tab-reservas")
+                            h2.traslados__reservas__title reservas
+                .traslados__reservas__row.traslados__reservas__row--bottom.-active(data-content="tab-informacion")
+                    .traslados__reservas__column.traslados__reservas__column--bottom-left
+                        .traslados__reservas__wrapper
+                            p.traslados__reservas__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                            p.traslados__reservas__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            .traslados__reservas__button
+                                a(href="#tabs" data-target="tab-reservas") haz tu reserva
+                    .traslados__reservas__column
+                        .traslados__reservas__wrapper.traslados__reservas__wrapper--image
+                            img(src="/images/home/hero-3.jpg")
+
+                .traslados__reservas__row.traslados__reservas__row--bottom(data-content="tab-reservas")
+                    ul.traslados__reservas__steps
+                        li.traslados__reservas__step.js-stepIndex.-active(data-step="step1")
+                        li.traslados__reservas__step.js-stepIndex
+                        li.traslados__reservas__step.js-stepIndex
+                    form.traslados__reservas__form
+                        .traslados__reservas__column.traslados__reservas__column--reserva.js-step.-active(data-step="step1")
+                            h3.traslados__reservas__reserva-title Qué día quieres viajar?
+                            .traslados__reservas__calendar
+                                input#date(type="hidden", name="date")
+                                #monthPicker.monthly
+                            button.traslados__reservas__continue-button.js-nextStep continuar
+                        .traslados__reservas__column.traslados__reservas__column--reserva.js-step
+                            h3.traslados__reservas__reserva-title El dia 5 de Febrero, en que horario quieres tu viaje?
+                            select.traslados__reservas__select
+                                option(hidden selected disabled) Selecciona un horario
+                                option 12:00
+                                option 01:00
+                                option 02:00
+                                option 03:00
+                                option 04:00
+                                option 05:00
+                            button.traslados__reservas__back-button.js-prevStep volver
+                            button.traslados__reservas__continue-button.js-nextStep continuar
+                        .traslados__reservas__column.traslados__reservas__column--reserva.js-step
+                            h3.traslados__reservas__reserva-title Completa tus datos para la reserva del 5 de febrero a las 8:30 am 
+                            .traslados__reservas__group
+                                input.traslados__reservas__input(type="text" placeholder="Nombre y Apellido")
+                                input.traslados__reservas__input(type="email" placeholder="Email")
+                                input.traslados__reservas__input.traslados__reservas__input--half(type="number" placeholder="Teléfono")
+                                input.traslados__reservas__input.traslados__reservas__input--half(type="number" placeholder="RUT / Pasaporte / DNI")
+                                input.traslados__reservas__input.traslados__reservas__input--checkbox(type="checkbox" id="checkbox" checked)
+                                label.traslados__reservas__label(for="checkbox") Acepto los términos y condiciones
+                            button.traslados__reservas__back-button.js-prevStep volver
+                            button.traslados__reservas__continue-button.js-nextStep reservar
+                        .traslados__reservas__column.traslados__reservas__column--reserva.js-step
+                            h2.traslados__reservas__reserva-uppertitle Reserva confirmada
+                            h3.traslados__reservas__reserva-title Gracias por elegir Traslados Apoquindo, este es el resumen de tu reserva. Revisa tu email para tener más detalles
+                            p.traslados__reservas__reserva-text Traslado al aeropuerto el día 8 de Febrero a las 8:30 am a nombre de:
+                            .traslados__reservas__reserva-wrapper
+                                .traslados__reservas__reserva-group
+                                    .traslados__reservas__group-title Nombre y Apellido
+                                    .traslados__reservas__group-text Juan Pérez
+                                .traslados__reservas__reserva-group
+                                    .traslados__reservas__group-title Email
+                                    .traslados__reservas__group-text juan.perez@mail.com
+                                .traslados__reservas__reserva-group.traslados__reservas__reserva-group--half
+                                    .traslados__reservas__group-title Teléfono
+                                    .traslados__reservas__group-text +56 555 5555
+                                .traslados__reservas__reserva-group.traslados__reservas__reserva-group--half
+                                    .traslados__reservas__group-title RUT / Pasaporte / DNI
+                                    .traslados__reservas__group-text 999999999
+
+        +reviews
+        +clients
+
+block scripts
+    script(src= baseUrl + 'scripts/monthly.js')

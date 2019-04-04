@@ -113,6 +113,10 @@
             &--green {
                 background: $green;
             }
+
+            &:hover {
+                color: $white;
+            }
         }
 
         &__tabs {

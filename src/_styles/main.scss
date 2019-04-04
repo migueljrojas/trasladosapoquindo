@@ -23,14 +23,19 @@ body {
     font-size: $sm;
 }
 
-a {
-    color:$link;
+a,button {
+    font-family: $altFont;
+    color: $link;
     transition: all $duration $easingLight;
 
     &:hover{
         color:$linkHover;
         text-decoration: none;
     }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $titleFont;
 }
 
 ul {
