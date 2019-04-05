@@ -23,24 +23,24 @@ block content
             .traslados__reservas__container.-active
                 .traslados__reservas__row.traslados__reservas__row--top#tabs
                     .traslados__reservas__column.traslados__reservas__column--top
-                        .traslados__reservas__heading.-active(data-target="tab-informacion")
+                        .traslados__reservas__heading.js-heading(data-view-trigger="informacion")
                             h2.traslados__reservas__title información sobre traslados
                     .traslados__reservas__column.traslados__reservas__column--top
-                        .traslados__reservas__heading(data-target="tab-reservas")
+                        .traslados__reservas__heading.js-heading(data-view-trigger="reserva")
                             h2.traslados__reservas__title reservas
-                .traslados__reservas__row.traslados__reservas__row--bottom.-active(data-content="tab-informacion")
+                .traslados__reservas__row.traslados__reservas__row--bottom.js-content(data-view-content="informacion")
                     .traslados__reservas__column.traslados__reservas__column--bottom-left
                         .traslados__reservas__wrapper
                             p.traslados__reservas__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
                             h3.traslados__reservas__subtitle Que incluye
                             p.traslados__reservas__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             .traslados__reservas__button
-                                a(href="#tabs" data-target="tab-reservas") haz tu reserva
+                                a(href="#tabs" data-view-trigger="reserva") haz tu reserva
                     .traslados__reservas__column
                         .traslados__reservas__wrapper.traslados__reservas__wrapper--image
                             img(src="/images/traslados/maipo.jpg")
 
-                .traslados__reservas__row.traslados__reservas__row--bottom(data-content="tab-reservas")
+                .traslados__reservas__row.traslados__reservas__row--bottom.js-content(data-view-content="reserva")
                     ul.traslados__reservas__steps
                         li.traslados__reservas__step.js-stepIndex.-active(data-step="step1")
                         li.traslados__reservas__step.js-stepIndex

@@ -6,16 +6,16 @@ var Header = function() {
     var body = $('body');
     var menuOpen = $('.header__hamburguer');
     var submenu = $('.header__submenu');
-    var submenuOpen = $('[data-content="submenu"]');
+    // var submenuOpen = $('[data-content="submenu"]');
 
-    menuOpen.on('click', function(){
-        header.toggleClass('-open');
-        body.toggleClass('-hideOverflow');
-    });
+    // menuOpen.on('click', function(){
+    //     header.toggleClass('-open');
+    //     body.toggleClass('-hideOverflow');
+    // });
 
-    submenuOpen.on('click', function(){
-        submenu.addClass('-open');
-    });
+    // submenuOpen.on('click', function(){
+    //     submenu.addClass('-open');
+    // });
 
     $('a[href*="#"]')
     // Remove links that don't actually link to anything
@@ -39,7 +39,7 @@ var Header = function() {
                 // Only prevent default if animation is actually gonna happen
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: target.offset().top + -80
+                    scrollTop: target.offset().top + -100
                 }, 1000, function() {
                 // Callback after animation
                 // Must change focus!

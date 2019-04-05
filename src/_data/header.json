@@ -2,27 +2,23 @@
     {
         "name":"Servicios",
         "url":"/servicios",
-        "data":"submenu",
+
         "submenu": [
             {
                 "name":"Traslados Turisticos",
-                "url":"/traslados-turisticos",
-                "data":"submenu-link"
+                "url":"/traslados-turisticos"
             },
             {
                 "name":"Traslados Corporativos",
-                "url":"/traslados/corporativos",
-                "data":"submenu-link"
+                "url":"/traslados/corporativos"
             },
             {
                 "name":"Traslados Ejecutivos",
-                "url":"/traslados/ejecutivos",
-                "data":"submenu-link"
+                "url":"/traslados/ejecutivos"
             },
             {
                 "name":"Traslados al Aeropuerto",
-                "url":"/traslados/al-aeropuerto",
-                "data":"submenu-link"
+                "url":"/traslados/al-aeropuerto"
             }
         ]
     },

@@ -1,0 +1,17 @@
+mixin UiModal(backdrop)
+    .ui-modal
+        if backdrop == "true" 
+            .ui-modal__backdrop(data-modal="close")
+            .ui-modal__container
+                button.ui-modal__close(data-modal="close")
+                    span
+                    span
+                
+                block
+        else
+            .ui-modal__container
+                button.ui-modal__close(data-modal="close")
+                    span
+                    span
+                
+                block

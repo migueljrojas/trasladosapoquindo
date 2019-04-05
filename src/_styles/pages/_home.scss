@@ -1,18 +1,26 @@
 .home {
+    position: relative;
+
     &__hero {
         padding-top: 10vh;
         height: 100vh;
         margin-bottom: 5vh;
 
         &__content {
-            display: none;
+            overflow: hidden;
+            width: 100%;
+            opacity: 0;
 
             &.-active {
-                display: flex;
+                opacity: 1;
+                overflow: visible;
+                width: 100%;
                 height: 60vh;
                 position: relative;
 
                 @include mq(sm) {
+                    @include trans;
+
                     height: 80vh;
                 }
             }
@@ -99,23 +107,9 @@
 
         &__link {
             width: 48%;
-            text-transform: uppercase;
-            color: $white;
-            text-align: center;
-            padding: 10px 0;
-            font-weight: 700;
 
             @include mq(sm) {
                 font-size: 26px;
-                text-decoration: none;
-            }
-
-            &--green {
-                background: $green;
-            }
-
-            &:hover {
-                color: $white;
             }
         }
 
@@ -512,6 +506,137 @@
                 width: 100%;
                 height: auto;
                 min-height: 100%;
+            }
+        }
+    }
+}
+
+.ui-modal {
+    &__container {
+        width: 90%;
+        max-height: 90%;
+        max-width: 750px;
+        background: $white;
+        overflow: hidden;
+    }
+
+    &__title {
+        margin: 0;
+        color: $blue;
+        background: $lightestGray;
+        margin-bottom: 20px;
+        font-size: 21px;
+        padding: 10px 20px 10px 10px;
+
+        @include mq(md) {
+            padding: 20px 0 20px 40px;
+            font-size: 26px;
+        }
+    }
+
+    &__traslados-wrapper {
+        max-height: 500px;
+        overflow-y: auto;
+        padding: 0 10px 20px 10px;
+
+        @include mq(md) {
+            padding: 0 40px 40px 40px;
+            max-height: 600px;
+        }
+    }
+
+    &__traslado-container {
+        width: 100%;
+        // height: 100px;
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $lightGray;
+        }
+    }
+
+    &__traslado-image {
+        padding-bottom: 18%;
+        width: 20%;
+        height: 0;
+        overflow: hidden;
+        border: 3px solid $lightGray;
+        box-sizing: content-box;
+        position: relative;
+
+        @include mq(md) {
+            padding-bottom: 10%;
+            width: 10%;
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &__wrapper {
+        width: 90%;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mq(md) {
+            flex-direction: row;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__traslado-title {
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: $darkGray;
+        font-family: $altFont;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+
+        @include mq(md) {
+            text-align: center;
+            font-size: 21px;
+
+        }
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__link {
+        font-size: 14px;
+
+        @include mq(md) {
+            font-size: 16px;
+        }
+
+        &._button--dark-ghost {
+            padding: 0;
+
+            @include mq(md) {
+                padding: 10px;
+            }
+        }
+
+        &._button--green {
+            padding: 5px 10px;
+
+            @include mq(md) {
+                padding: 10px;
             }
         }
     }

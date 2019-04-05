@@ -13,12 +13,12 @@ header.header
             nav.header__nav
                 ul.header__menu
                     each item in site.data.header
-                        li.header__item(data-content=item.data)
+                        li.header__item
                             a(href=item.url)=item.name
                             if item.submenu
                                 ul.header__submenu
                                     each link in item.submenu
-                                        li.header__submenu(data-content=link.data)
+                                        li.header__submenu-item
                                             a(href=link.url)=link.name
             
             .header__social

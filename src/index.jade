@@ -2,19 +2,20 @@ extends _layouts/base
 
 include ./_modules/slider/slider
 include ./_modules/clients/clients
+include ./_modules/ui-modal/ui-modal
 
 block content
     main.home
         section.home__hero
-            .home__hero__content.-active(data-content="turistico")
+            .home__hero__content(data-content="turistico")
                 .home__hero__image
                     img(src="/images/home/hero-1.jpg")
                 .home__hero__wrapper
                     h1.home__hero__title traslados turísticos
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     .home__hero__group
-                        a.home__hero__link.home__hero__link--plain(href="/traslados-turisticos") más información
-                        a.home__hero__link.home__hero__link--green(href="/traslados-turisticos") reservar fechas
+                        a.home__hero__link._button._button--light-ghost(href="/traslados-turisticos") más información
+                        button.home__hero__link._button._button--green(data-modal="open") reservar fechas
             .home__hero__content(data-content="corporativo")
                 .home__hero__image
                     img(src="/images/home/hero-2.jpg")
@@ -22,8 +23,8 @@ block content
                     h1.home__hero__title traslados corporativos
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     .home__hero__group
-                        a.home__hero__link.home__hero__link--plain(href="/traslados/corporativos") más información
-                        a.home__hero__link.home__hero__link--green(href="/traslados/corporativos") reservar fechas
+                        a.home__hero__link._button._button--light-ghost(href="/traslados/corporativos/") más información
+                        a.home__hero__link._button._button--green(href="/traslados/corporativos/#reserva") reservar fechas
             .home__hero__content(data-content="ejecutivo")
                 .home__hero__image
                     img(src="/images/home/hero-3.jpg")
@@ -31,8 +32,8 @@ block content
                     h1.home__hero__title traslados ejecutivos
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     .home__hero__group
-                        a.home__hero__link.home__hero__link--plain(href="/traslados/ejecutivos") más información
-                        a.home__hero__link.home__hero__link--green(href="/traslados/ejecutivos") reservar fechas
+                        a.home__hero__link._button._button--light-ghost(href="/traslados/ejecutivos") más información
+                        a.home__hero__link._button._button--green(href="/traslados/ejecutivos/#reserva") reservar fechas
             .home__hero__content(data-content="aeropuerto")
                 .home__hero__image
                     img(src="/images/home/hero-4.jpg")
@@ -40,10 +41,10 @@ block content
                     h1.home__hero__title traslados al aeropuerto
                     p.home__hero__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     .home__hero__group
-                        a.home__hero__link.home__hero__link--plain(href="/traslados/al-aeropuerto") más información
-                        a.home__hero__link.home__hero__link--green(href="/traslados/al-aeropuerto") reservar fechas
+                        a.home__hero__link._button._button--light-ghost(href="/traslados/al-aeropuerto") más información
+                        a.home__hero__link._button._button--green(href="/traslados/al-aeropuerto/#reserva") reservar fechas
             .home__hero__tabs
-                a.home__hero__tab.-active(href="#" data-target="turistico")
+                a.home__hero__tab(href="#" data-target="turistico")
                         i.fa.fa-umbrella
                         h3.home__hero__tab-title traslados turísticos
                 a.home__hero__tab(href="#" data-target="corporativo")
@@ -119,3 +120,55 @@ block content
                         img(src="/images/home/testimonios-2.jpg")
 
         +clients
+
+        +UiModal('true')
+            h2.ui-modal__title Estos son los traslados turisticos que tenemos para ofrecerte
+            .ui-modal__traslados-wrapper
+                .ui-modal__traslado-container
+                    .ui-modal__traslado-image
+                        img(src="/images/traslados/buceo.jpg")
+                    .ui-modal__wrapper
+                        h3.ui-modal__traslado-title Clases de buceo
+                        .ui-modal__group
+                            a.ui-modal__link._button._button--dark-ghost(href="/traslados-turisticos/clases-de-buceo") Más Informacion
+                            a.ui-modal__link._button._button--green(href="/traslados-turisticos/clases-de-buceo/#reserva") reservar
+                .ui-modal__traslado-container
+                    .ui-modal__traslado-image
+                        img(src="/images/traslados/maipo.jpg")
+                    .ui-modal__wrapper
+                        h3.ui-modal__traslado-title Cajón del maipo
+                        .ui-modal__group
+                            a.ui-modal__link._button._button--dark-ghost(href="/traslados-turisticos/cajon-de-maipo") Más Informacion
+                            a.ui-modal__link._button._button--green(href="/traslados-turisticos/cajon-de-maipo/#reserva") reservar
+                .ui-modal__traslado-container
+                    .ui-modal__traslado-image
+                        img(src="/images/traslados/isla-negra.jpg")
+                    .ui-modal__wrapper
+                        h3.ui-modal__traslado-title isla negra
+                        .ui-modal__group
+                            a.ui-modal__link._button._button--dark-ghost(href="/traslados-turisticos/isla-negra") Más Informacion
+                            a.ui-modal__link._button._button--green(href="/traslados-turisticos/isla-negra/#reserva") reservar
+                .ui-modal__traslado-container
+                    .ui-modal__traslado-image
+                        img(src="/images/traslados/algarrobo.jpg")
+                    .ui-modal__wrapper
+                        h3.ui-modal__traslado-title algarrobo
+                        .ui-modal__group
+                            a.ui-modal__link._button._button--dark-ghost(href="/traslados-turisticos/algarrobo") Más Informacion
+                            a.ui-modal__link._button._button--green(href="/traslados-turisticos/algarrobo/#reserva") reservar
+                .ui-modal__traslado-container
+                    .ui-modal__traslado-image
+                        img(src="/images/traslados/monticello.jpg")
+                    .ui-modal__wrapper
+                        h3.ui-modal__traslado-title Casino monticello
+                        .ui-modal__group
+                            a.ui-modal__link._button._button--dark-ghost(href="/traslados-turisticos/casino-monticello") Más Informacion
+                            a.ui-modal__link._button._button--green(href="/traslados-turisticos/casino-monticello/#reserva") reservar
+                .ui-modal__traslado-container
+                    .ui-modal__traslado-image
+                        img(src="/images/traslados/city-tour.jpg")
+                    .ui-modal__wrapper
+                        h3.ui-modal__traslado-title City tour
+                        .ui-modal__group
+                            a.ui-modal__link._button._button--dark-ghost(href="/traslados-turisticos/city-tour") Más Informacion
+                            a.ui-modal__link._button._button--green(href="/traslados-turisticos/city-tour/#reserva") reservar
